@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+  include includes/head.pug
+  body
+    include includes/navigation.pug
+    .container.mt-4
+      .card.mx-auto(style="max-width: 500px;")
+        .card-title.mt-3.text-center
+          h2 Users
+        .card-body
+          ul#users
+            each user in users
+              li.user.d-flex.align-items-center(id="user-" + user.id)
+                span.flex-grow-1= user.username
+                a.remove.text-right(href="#")
+                  i.fa.fa-trash
+          form.mt-4
+            .row
+              .col-sm-5
+                .input-group.form-group
+                  .input-group-prepend
+                    span.input-group-text
+                      i.fas.fa-user
+                  input.form-control(type="text" name="username" placeholder="Username")
+              .col-sm-5
+                .input-group.form-group
+                  .input-group-prepend
+                    span.input-group-text
+                      i.fas.fa-key
+                  input.form-control(type="password" name="password" placeholder="Password")
+              .col-sm-2.form-group
+                button.btn.btn-primary Add
+
+    include includes/scripts.pug
+    script(type='module' src='/js/script_users.js')

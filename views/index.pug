@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+  include includes/head.pug
+  body
+    include includes/navigation.pug
+    .container.mt-4
+      .card.add-todo.mx-auto(style="max-width: 500px;")
+        .card-body
+          form.d-flex
+            input(type="text" id="inputTodo" placeholder="What will you do today?")
+            button.add-items ADD
+            //- .row
+              .col-md-auto
+                  label(for="inputTodo" class="sr-only") Todo
+                  input(type="text" id="inputTodo" placeholder="What will you do today?")
+              .col
+                  button.add-items ADD
+
+    .container.mt-5
+      .card.mx-auto(style="max-width: 500px;")
+        .card-body
+          ul#todos
+            each todo in todos
+              li.todo.d-flex.align-items-center(id="todo-" + todo.id class=todo.done ? 'done' : '')
+                input.checkbox(type="checkbox" checked=!!todo.done)
+                span.flex-grow-1.todo-text= todo.text
+                a.remove.text-right(href="#")
+                  i.fa.fa-trash
+
+    include includes/scripts.pug
+    script(type='module' src='/js/script.js')
+    //- script(type='module' src='/js/script_sync.js')
+    //- script(type='text/javascript' src='/js/script.js')

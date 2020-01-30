@@ -1,0 +1,24 @@
+nav.navbar.fixed-top.navbar-expand-lg.navbar-light.bg-light
+  a(href="/")
+    span.navbar-brand.mb-0.h1 TODOs
+
+  button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation")
+    span.navbar-toggler-icon
+  .collapse.navbar-collapse#navbarNav
+    ul.navbar-nav
+      li.nav-item
+        a.nav-link(href="/")
+          i.fas.fa-list
+          span.ml-1 Home
+      li.nav-item
+        a.nav-link(href="/users")
+          i.fas.fa-users
+          span.ml-1 Users
+
+    ul.nav.navbar-nav.ml-auto
+      li.nav-item
+        a.nav-link(href="/logout")
+          i.fas.fa-sign-out-alt
+          span.ml-1 Logout
+
+.container.mt-5 &nbsp;
