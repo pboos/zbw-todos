@@ -7,7 +7,7 @@ const session = require('express-session');
 const database = require('./database.js');
 
 const app = express();
-const port = process.env.PORT || 8000;
+const port = process.env.NODE_PORT || 8000;
 
 app.set('views', './views');
 app.set('view engine', 'pug');
